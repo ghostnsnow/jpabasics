@@ -1,0 +1,42 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+    <!--<persistence-unit name="oracledb" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            &lt;!&ndash; JPA 3.x &ndash;&gt;
+            <property name="jakarta.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+            &lt;!&ndash;<property name="jakarta.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:orclpdb" />&ndash;&gt;
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:oracle:thin:hr/hr@//localhost:1521/orclpdb" />
+            <property name="jakarta.persistence.jdbc.user" value="hr" />
+            <property name="jakarta.persistence.jdbc.password" value="hr" />
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+
+            &lt;!&ndash; Echo all executed SQL to console &ndash;&gt;
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.highlight_sql" value="true" />
+        </properties>
+    </persistence-unit>-->
+
+    <persistence-unit name="h2db" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <!-- JPA 3.x -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test" /> <!--jdbc:h2:~/test-->
+            <!--<property name="jakarta.persistence.jdbc.url" value="jdbc:h2:mem:mydb" />-->
+            <property name="jakarta.persistence.jdbc.user" value="sa" />
+            <property name="jakarta.persistence.jdbc.password" value="" />
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+
+            <!-- Echo all executed SQL to console -->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.highlight_sql" value="true" />
+        </properties>
+    </persistence-unit>
+</persistence>
